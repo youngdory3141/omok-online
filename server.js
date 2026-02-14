@@ -6,6 +6,9 @@ const io = require("socket.io")(http);
 app.use(express.static("public"));
 
 const PORT = process.env.PORT || 3000;
+http.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
 
 let board = Array.from({ length: 6 }, () => Array(6).fill(null));
 let current = "black";
